@@ -1,0 +1,15 @@
+Xft*antialias:        true
+Xft*dpi:              96
+Xft*hinting:          true
+Xft*hintstyle:        hintfull
+
+XTerm*faceName:       Inconsolata
+XTerm*faceSize:       10
+
+XTerm*scrollBar:      false
+
+Xterm*utf8:           1
+XTerm*reverseVideo:   true
+XTerm*termName:       xterm-256color
+Xterm*internalBorder: 0
+Xterm*borderWidth:    0

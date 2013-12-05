@@ -1,0 +1,11 @@
+# .bashrc
+
+TERM=xterm-256color
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Add homedir stuff to the path
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin

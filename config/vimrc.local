@@ -1,0 +1,30 @@
+let mapleader = ","
+
+nnoremap <CR> :noh<CR><CR>
+
+" Find the current file in NERDTree
+nmap ,m :NERDTreeFind<CR>
+" Close vim if nerdtree is the only window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+set foldmethod=syntax
+set foldlevel=1
+
+nnoremap <F4> :set invpaste paste?<CR>
+set pastetoggle=<F4>
+set showmode
+
+" Fix color handling for putty and xterm
+if &term =~ "screen-256-color"
+  "256 color --
+  let &t_Co=256
+  " restore screen after quitting
+  set t_ti=ESC7ESC[rESC[?47h t_te=ESC[?47lESC8
+  if has("terminfo")
+    let &t_Sf="\ESC[3%p1%dm"
+    let &t_Sb="\ESC[4%p1%dm"
+  else
+    let &t_Sf="\ESC[3%dm"
+    let &t_Sb="\ESC[4%dm"
+  endif
+endif

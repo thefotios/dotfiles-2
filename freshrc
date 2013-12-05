@@ -1,0 +1,73 @@
+# vi:ft=sh:
+# freshshell.com
+#
+# Examples:
+#
+#   fresh twe4ked/dotfiles shell/functions/\*
+#   fresh jasoncodes/dotfiles shell/aliases/rails.sh
+#   fresh jasoncodes/dotfiles config/tmux.conf --file
+#
+# See http://freshshell.com/readme for documentation.
+
+fresh freshshell/fresh bin/fresh --bin
+
+fresh config/\* --file
+fresh bin/\* --bin
+fresh aliases/\*
+
+fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile
+fresh-options --file=~/.bashrc 
+  fresh freshshell/fresh contrib/source-build.sh
+  fresh jasoncodes/dotfiles shell/config/heroku.sh
+  fresh shell/config/\*
+fresh-options
+
+# This will set up a few Gems I always use and make sure they're installed in fresh_after_build
+fresh gems/\* --file=~/projects/Gemfile
+
+fresh freshshell/fresh contrib/completion/fresh-completion.bash
+
+fresh pengwynn/dotfiles bin/gitio --bin
+
+# Add Gust's vim configs
+fresh gustly/vim-config . --file=~/.vim/
+
+# This will checkout hub but won't really do anything until fresh_after_build
+fresh github/hub . --file=~/.hub/
+
+fresh-options --file=~/.tmux.conf
+  fresh foobacca/dotfiles tmux/clipboard
+fresh-options
+
+fresh jasoncodes/dotfiles config/ackrc --file
+
+fresh_after_build() {
+  # Need to make sure all of the submodules are updated properly
+  (
+    cd ~/.fresh/source/gustly/vim-config
+    if [ -z "${updated_submodules+1}" ]; then
+      git pull && git submodule update --init --recursive
+      export updated_submodules=0
+    fi
+    if [ "$updated_submodules" -eq 0 ]; then
+      export updated_submodules=$[updated_submodules+1]
+      ~/bin/fresh
+    fi
+    unset updated_submodules
+  )
+
+  # Symlink the Gust vimrc
+  ln -sf ~/.vim/vimrc ~/.vimrc
+
+  # Hacky way to get the lastest standalone hub script until fresh respects branches
+  (
+    cd ~/.fresh/source/github/hub
+    git show origin/gh-pages:standalone > ~/bin/hub && chmod +x ~/bin/hub
+  )
+
+  # Install/update all of my Gems
+  (
+    cd ~/projects/
+    bundle update
+  )
+}

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+#ionice -c2 rsync -aEPOW "$@"
+rsync --partial --progress --append --rsh=ssh -r -h "$@"

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cmd="sudo yum"
+if [ "$*" == "update" ]; then
+  cmd="${cmd} update -y"
+else
+  cmd="${cmd} install -y $*"
+fi
+
+${cmd}
