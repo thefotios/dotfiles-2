@@ -67,7 +67,9 @@ fresh_after_build() {
 
   # Install/update all of my Gems
   (
-    cd ~/projects/
-    bundle update
+    if $(which bundle); then
+      cd ~/projects/
+      bundle update
+    fi
   )
 }
