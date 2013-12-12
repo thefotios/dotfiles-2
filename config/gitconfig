@@ -31,10 +31,8 @@
 [core]
   excludesfile = /home/fotios/.gitignore
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	quotepath = off
+  quotepath = off
 [merge]
   tool = vimdiff
 [branch]
   autosetupmerge = true
-[push]
-	default = simple
