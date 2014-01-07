@@ -14,13 +14,15 @@ fresh freshshell/fresh bin/fresh --bin
 fresh config/\* --file
 fresh bin/\* --bin
 fresh aliases/\*
+fresh functions/\*
 
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile
 fresh-options --file=~/.bashrc 
   fresh freshshell/fresh contrib/source-build.sh
   fresh jasoncodes/dotfiles shell/config/heroku.sh
-  fresh shell/config/\*
+  fresh bash/config/\*
   fresh env/\*
+  fresh bash/bashrc_after
 fresh-options
 
 # This will set up a few Gems I always use and make sure they're installed in fresh_after_build

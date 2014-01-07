@@ -6,4 +6,4 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Add homedir stuff to the path
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+#export PATH=$PATH:$HOME/.local/bin:$HOME/bin

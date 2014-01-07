@@ -1,4 +1,4 @@
 if [ -r $HOME/.rbenv ]; then
-  export PATH="$PATH:$HOME/.rbenv/bin"
+  pathmunge $HOME/.rbenv/bin after
   eval "$(rbenv init - --no-rehash)"
 fi
