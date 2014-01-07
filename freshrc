@@ -25,6 +25,9 @@ fresh-options --file=~/.bashrc
   fresh bash/bashrc_after
 fresh-options
 
+fresh i3/i3status.conf --file=~/.i3status.conf
+fresh i3/config --file=~/.i3/config
+
 fresh-options --file=~/.ssh/config
   fresh ssh/personal
   fresh ssh/shared_config

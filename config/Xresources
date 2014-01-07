@@ -13,3 +13,5 @@ XTerm*reverseVideo:   true
 XTerm*termName:       xterm-256color
 Xterm*internalBorder: 0
 Xterm*borderWidth:    0
+
+XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
