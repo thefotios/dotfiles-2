@@ -30,7 +30,7 @@ fresh freshshell/fresh contrib/completion/fresh-completion.bash
 fresh pengwynn/dotfiles bin/gitio --bin
 
 # Add Gust's vim configs
-fresh gustly/vim-config . --file=~/.vim/
+#fresh gustly/vim-config . --file=~/.vim/
 
 # This will checkout hub but won't really do anything until fresh_after_build
 fresh github/hub . --file=~/.hub/
