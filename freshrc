@@ -30,6 +30,14 @@ fresh-options --file=~/.ssh/config
   fresh ssh/shared_config
 fresh-options
 
+fresh awesome/plugins/bashets.lua --file=~/.config/awesome/bashets.lua
+
+fresh-options --file=~/.config/awesome/rc.lua
+  fresh awesome/requires.lua
+  fresh awesome/parts/\*
+  fresh awesome/rc.lua
+fresh-options
+
 # This will set up a few Gems I always use and make sure they're installed in fresh_after_build
 fresh gems/\* --file=~/projects/Gemfile
 

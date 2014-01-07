@@ -1,1 +1,3 @@
-xrdb ~/.Xresources &
+xrdb ~/.Xresources
+
+nm-applet
