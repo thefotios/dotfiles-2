@@ -20,6 +20,7 @@ fresh-options --file=~/.bashrc
   fresh freshshell/fresh contrib/source-build.sh
   fresh jasoncodes/dotfiles shell/config/heroku.sh
   fresh shell/config/\*
+  fresh env/\*
 fresh-options
 
 # This will set up a few Gems I always use and make sure they're installed in fresh_after_build
