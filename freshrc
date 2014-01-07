@@ -43,21 +43,21 @@ fresh jasoncodes/dotfiles config/ackrc --file
 
 fresh_after_build() {
   # Need to make sure all of the submodules are updated properly
-  (
-    cd ~/.fresh/source/gustly/vim-config
-    if [ -z "${updated_submodules+1}" ]; then
-      git pull && git submodule update --init --recursive
-      export updated_submodules=0
-    fi
-    if [ "$updated_submodules" -eq 0 ]; then
-      export updated_submodules=$[updated_submodules+1]
-      ~/bin/fresh
-    fi
-    unset updated_submodules
-  )
+#  (
+#    cd ~/.fresh/source/gustly/vim-config
+#    if [ -z "${updated_submodules+1}" ]; then
+#      git pull && git submodule update --init --recursive
+#      export updated_submodules=0
+#    fi
+#    if [ "$updated_submodules" -eq 0 ]; then
+#      export updated_submodules=$[updated_submodules+1]
+#      ~/bin/fresh
+#    fi
+#    unset updated_submodules
+#  )
 
   # Symlink the Gust vimrc
-  ln -sf ~/.vim/vimrc ~/.vimrc
+#  ln -sf ~/.vim/vimrc ~/.vimrc
 
   # Hacky way to get the lastest standalone hub script until fresh respects branches
   (
@@ -66,10 +66,10 @@ fresh_after_build() {
   )
 
   # Install/update all of my Gems
-  (
-    if $(which bundle); then
-      cd ~/projects/
-      bundle update
-    fi
-  )
+#  (
+#    if $(which bundle); then
+#      cd ~/projects/
+#      bundle update
+#    fi
+#  )
 }
