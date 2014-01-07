@@ -32,9 +32,6 @@ fresh pengwynn/dotfiles bin/gitio --bin
 # Add Gust's vim configs
 #fresh gustly/vim-config . --file=~/.vim/
 
-# This will checkout hub but won't really do anything until fresh_after_build
-fresh github/hub . --file=~/.hub/
-
 fresh-options --file=~/.tmux.conf
   fresh foobacca/dotfiles tmux/clipboard
 fresh-options
@@ -42,6 +39,16 @@ fresh-options
 fresh jasoncodes/dotfiles config/ackrc --file
 
 fresh_after_build() {
+  # Install hub gem and then install it locally into ~/bin
+  (
+    if ! gem query --name-matches '^hub$' --installed &> /dev/null; then
+      gem install hub && rbenv rehash 
+    fi
+
+    if [ -x "$(command -v hub)" ]; then
+      hub hub standalone > ~/bin/hub && chmod +x ~/bin/hub
+    fi
+  )
   # Need to make sure all of the submodules are updated properly
 #  (
 #    cd ~/.fresh/source/gustly/vim-config
@@ -58,12 +65,6 @@ fresh_after_build() {
 
   # Symlink the Gust vimrc
 #  ln -sf ~/.vim/vimrc ~/.vimrc
-
-  # Hacky way to get the lastest standalone hub script until fresh respects branches
-  (
-    cd ~/.fresh/source/github/hub
-    git show origin/gh-pages:standalone > ~/bin/hub && chmod +x ~/bin/hub
-  )
 
   # Install/update all of my Gems
 #  (
