@@ -16,9 +16,9 @@ fresh bin/\* --bin
 fresh aliases/\*
 fresh functions/\*
 
-fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile
-fresh-options --file=~/.bashrc 
-  fresh freshshell/fresh contrib/source-build.sh
+fresh-options --file=~/.bashrc
+  fresh foobacca/dotfiles bashrc
+  fresh freshshell/fresh contrib/completion/fresh-completion.bash
   fresh jasoncodes/dotfiles shell/config/heroku.sh
   fresh bash/config/\*
   fresh env/\*
@@ -27,8 +27,6 @@ fresh-options
 
 # This will set up a few Gems I always use and make sure they're installed in fresh_after_build
 fresh gems/\* --file=~/projects/Gemfile
-
-fresh freshshell/fresh contrib/completion/fresh-completion.bash
 
 fresh pengwynn/dotfiles bin/gitio --bin
 
