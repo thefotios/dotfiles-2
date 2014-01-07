@@ -1,0 +1,20 @@
+Host home
+  User fotios
+  DynamicForward 8080
+  Hostname fotios.dyndns.org
+
+Host pi
+  User fotios
+  HostName 192.168.1.21
+
+Host lappy
+  HostName 192.168.1.103
+
+Host csh
+  Hostname rancor.csh.rit.edu
+  User fotios
+
+Host github.com
+  ControlPath none
+  ControlMaster no
+  IdentityFile ~/.ssh/id_rsa

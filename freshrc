@@ -25,6 +25,11 @@ fresh-options --file=~/.bashrc
   fresh bash/bashrc_after
 fresh-options
 
+fresh-options --file=~/.ssh/config
+  fresh ssh/personal
+  fresh ssh/shared_config
+fresh-options
+
 # This will set up a few Gems I always use and make sure they're installed in fresh_after_build
 fresh gems/\* --file=~/projects/Gemfile
 

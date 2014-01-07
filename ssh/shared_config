@@ -1,0 +1,11 @@
+Host *
+  ForwardAgent yes
+  GSSAPIAuthentication no
+  IdentityFile ~/.ssh/id_rsa
+  # Shared session stuff
+  ControlMaster auto
+  ControlPath ~/.ssh/.control/%r@%h:%p
+  ControlPersist 10m
+  AddressFamily inet
+  Ciphers arcfour,blowfish-cbc
+  Compression yes
