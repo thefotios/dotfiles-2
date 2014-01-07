@@ -87,4 +87,7 @@ fresh_after_build() {
 #      bundle update
 #    fi
 #  )
+  (
+    ln -sf ~/.xinitrc ~/.xsession
+  )
 }
