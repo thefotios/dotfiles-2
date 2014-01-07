@@ -6,4 +6,4 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-_byobu_sourced=1 . /usr/bin/byobu-launch
+#_byobu_sourced=1 . /usr/bin/byobu-launch
