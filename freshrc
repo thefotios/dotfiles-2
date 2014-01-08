@@ -28,7 +28,8 @@ fresh-options
 fresh i3/i3status.conf --file=~/.i3status.conf
 fresh i3/config --file=~/.i3/config
 
-fresh-options --file=~/.ssh/config
+fresh-options --file=~/.ssh/config --marker='#'
+  fresh git://github.shuttercorp.net/flindiakos/dotfiles.git ssh_config
   fresh ssh/personal
   fresh ssh/shared_config
 fresh-options
