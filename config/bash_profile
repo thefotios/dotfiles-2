@@ -5,5 +5,7 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
+keychain --quiet ~/.ssh/id_rsa
+
 # User specific environment and startup programs
 #_byobu_sourced=1 . /usr/bin/byobu-launch
