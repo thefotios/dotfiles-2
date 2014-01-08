@@ -94,4 +94,11 @@ fresh_after_build() {
   (
     ln -sf ~/.xinitrc ~/.xsession
   )
+
+  # Make sure we have a control socket directory for ssh
+  (
+    if [ ! -d ~/.ssh/.control ]; then
+      mkdir ~/.ssh/.control
+    fi
+  )
 }
