@@ -45,6 +45,8 @@ fresh-options
 # This will set up a few Gems I always use and make sure they're installed in fresh_after_build
 fresh gems/\* --file=~/projects/Gemfile
 
+fresh nojhan/liquidprompt . --file=~/.liquidprompt/
+
 fresh pengwynn/dotfiles bin/gitio --bin
 
 # Add Gust's vim configs
