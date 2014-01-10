@@ -7,5 +7,11 @@ fi
 
 keychain --quiet ~/.ssh/id_rsa
 
+. ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+if ! mount | grep "/mnt/gdrive" &> /dev/null ; then
+  google-drive-ocamlfuse /mnt/gdrive
+fi
+
 # User specific environment and startup programs
 #_byobu_sourced=1 . /usr/bin/byobu-launch
