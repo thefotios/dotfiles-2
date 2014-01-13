@@ -156,7 +156,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 $((pactl list sinks | grep -q Mute:.no && echo 1) || echo 0) && killall -SIGUSR1 i3status
 
 set $browser "^Google-chrome$"
-assign [class=$browser] www
+assign [class=$browser] 2:www
 bindsym $mod+c [class=$browser] focus
 
 #exec --no-startup-id /usr/libexec/gnome-settings-daemon
