@@ -162,3 +162,6 @@ bindsym $mod+c [class=$browser] focus
 #exec --no-startup-id /usr/libexec/gnome-settings-daemon
 exec --no-startup-id pactl set-sink-volume 0 -- 50% && killall -SIGUSR1 i3status
 exec --no-startup-id nm-applet
+
+exec --no-startup-id xautolock -time 10 -locker 'i3lock' &
+bindsym Control+mod1+l exec i3lock
