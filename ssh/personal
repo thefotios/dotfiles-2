@@ -3,6 +3,10 @@ Host home
   DynamicForward 8080
   Hostname fotios.dyndns.org
 
+Host media
+  User fotios
+  Hostname media.lindiakos
+
 Host pi
   User fotios
   HostName 192.168.1.21
